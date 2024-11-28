@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discrete Mathematics - Logical Propositions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #101010; /* Deep black background */
+            color: #00ff9f; /* Neon green text */
+            margin: 0;
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+        header {
+            background: linear-gradient(45deg, #00ffff, #ff00ff); /* Neon cyan to pink */
+            color: #ffffff; /* Neon white */
+            padding: 20px;
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            text-transform: uppercase;
+            animation: slideDown 1s ease-out;
+        }
+        section {
+            margin: 40px auto;
+            max-width: 1200px;
+            padding: 20px;
+            background-color: #181818; /* Dark gray background */
+            box-shadow: 0 6px 15px rgba(0, 255, 159, 0.5); /* Neon green glow */
+            border-radius: 10px;
+            animation: fadeIn 2s ease-in;
+        }
+        h2 {
+            color: #00ffff; /* Neon cyan */
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        p, ul li {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        ul li {
+            color: #ff00ff; /* Neon pink */
+        }
+        .animate-btn {
+            display: inline-block;
+            background-color: #181818; /* Matches section background */
+            color: #00ffff; /* Neon cyan */
+            padding: 12px 25px;
+            font-size: 18px;
+            border: 2px solid #00ffff; /* Neon cyan border */
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 6px 12px rgba(0, 255, 255, 0.8); /* Cyan glow */
+        }
+        .animate-btn:hover {
+            background-color: #00ff9f; /* Neon green */
+            color: #000000; /* Dark text */
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 255, 159, 1); /* Strong neon green glow */
+        }
+        .example {
+            background-color: #202020; /* Slightly lighter dark gray */
+            border-left: 5px solid #ff00ff; /* Neon pink */
+            padding: 12px;
+            font-style: italic;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        footer {
+            background: #121212; /* Very dark gray */
+            color: #00ff9f; /* Neon green */
+            padding: 15px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        @keyframes slideDown {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    Discrete Mathematics - Logical Propositions
+</header>
+
+<section>
+    <h2>Introduction to Logical Propositions</h2>
+    <p>
+        Logical propositions are declarative statements that can be true or false. They form the basis of discrete mathematics and computational logic, often used to evaluate the relationships between variables.
+    </p>
+
+    <h2>Key Concepts</h2>
+    <ul>
+        <li><strong>Truth Tables:</strong> Evaluate truth values systematically.</li>
+        <li><strong>Logical Connectives:</strong> AND (∧), OR (∨), NOT (¬), Implication (→), and Biconditional (↔).</li>
+        <li><strong>Tautologies and Contradictions:</strong> Propositions that are always true or always false.</li>
+        <li><strong>Applications:</strong> Logic gates, problem-solving, and decision-making.</li>
+    </ul>
+
+    <h2>Interactive Animation</h2>
+    <p>Click the button below to generate a truth table dynamically!</p>
+    <button class="animate-btn" onclick="generateTruthTable()">Generate Truth Table</button>
+
+    <div id="truthTable" style="margin-top: 20px; color: #00ff9f;"></div>
+</section>
+
+<footer>
+    <p>Discover more learning resources at <a href="https://samacheerkalvi.guru" style="color: #ff00ff;">Samacheer Kalvi</a>.</p>
+</footer>
+
+<script>
+    function generateTruthTable() {
+        const truthTableContainer = document.getElementById('truthTable');
+        truthTableContainer.innerHTML = '<p style="color: #00ffff;">Generating truth table...</p>';
+        setTimeout(() => {
+            truthTableContainer.innerHTML = `
+                <h3 style="color: #00ffff;">Truth Table for: (P ∧ Q) ∨ ¬R</h3>
+                <table border="1" cellpadding="10" cellspacing="0" style="width: 100%; text-align: center; color: #ffffff; border-color: #00ff9f;">
+                    <tr style="color: #ff00ff;"><th>P</th><th>Q</th><th>R</th><th>(P ∧ Q) ∨ ¬R</th></tr>
+                    <tr><td>true</td><td>true</td><td>true</td><td>false</td></tr>
+                    <tr><td>true</td><td>true</td><td>false</td><td>true</td></tr>
+                    <tr><td>true</td><td>false</td><td>true</td><td>false</td></tr>
+                    <tr><td>true</td><td>false</td><td>false</td><td>true</td></tr>
+                    <tr><td>false</td><td>true</td><td>true</td><td>false</td></tr>
+                    <tr><td>false</td><td>true</td><td>false</td><td>true</td></tr>
+                    <tr><td>false</td><td>false</td><td>true</td><td>true</td></tr>
+                    <tr><td>false</td><td>false</td><td>false</td><td>true</td></tr>
+                </table>
+            `;
+        }, 1500);
+    }
+</script>
+
+</body>
+</html>
